@@ -10,8 +10,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
-    List<Restaurant> findAllByType(Type type);
+    List<Restaurant> findAllByTypeAndIsDeletedFalse(Type type);
 
     Page<Restaurant> findByName(String name, Pageable pageable);
+
+    List<Restaurant> findAllByIsDeletedFalse();
 
 }

@@ -41,14 +41,14 @@ public class RestaurantService {
     }
 
     public GetRestaurantListDto getRestaurantList() {
-        List<Restaurant> list = restaurantRepository.findAll();
+        List<Restaurant> list = restaurantRepository.findAllByIsDeletedFalse();
         GetRestaurantListDto dto = new GetRestaurantListDto();
         dto.setRestaurants(list);
         return dto;
     }
 
     public GetRestaurantListDto getRestaurantListByType(Type type) {
-        List<Restaurant> list = restaurantRepository.findAllByType(type);
+        List<Restaurant> list = restaurantRepository.findAllByTypeAndIsDeletedFalse(type);
         GetRestaurantListDto dto = new GetRestaurantListDto();
         dto.setRestaurants(list);
         return dto;
