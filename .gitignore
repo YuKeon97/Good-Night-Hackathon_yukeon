@@ -38,3 +38,5 @@ out/
 
 resources/application-dbconfig.properties
 src/main/resources/application-dbconfig.properties
+
+.DS_Store
