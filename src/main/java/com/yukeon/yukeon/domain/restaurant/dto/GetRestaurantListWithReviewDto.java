@@ -18,7 +18,6 @@ import java.util.List;
 public class GetRestaurantListWithReviewDto {
     private String  restaurant_name;
     private List<GetReviewListDto> reviews;
-
     public GetRestaurantListWithReviewDto() {
     }
 }
